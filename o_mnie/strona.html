@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O mnie</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #221a52;
+        }
+        h1 {
+            color: #cacaca;
+            text-align: center;
+        }
+        h2 {
+            color: #cacaca;
+            text-align: center;
+        }
+        h3 {
+            color: #221a52;
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            display:block;
+
+        }
+        ul {
+            list-style-type: square;
+        }
+        footer {
+            text-align: center;
+            color: #777;
+        }
+        .column {
+          float: left;
+          width: 25%;
+          padding-left: 3%;
+        }
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .imageContainer > img:hover {
+        width: 100px;
+        height: 200px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Maciej Hendzel</h1>
+        <h2>Witaj na mojej stronie!</h2>
+    </header>
+    <section>
+    <center>
+    <a href="#portfolio" style="text-decoration: none">Portfolio zawodowe</a>
+    <a href="#zaint_zaw" style="text-decoration: none">Zainteresowania zawodowe</a>
+    <a href="#zaint" style="text-decoration: none">Inne zainteresowania</a>
+    <a href="#przedmioty" style="text-decoration: none">Prowadzone przedmioty</a>
+    <a href="#kontakt" style="text-decoration: none">Kontakt</a>
+    </center>
+    </section>
+    <section>
+        <h3>O mnie</h3>
+        <div class="row">
+	<img src=https://apps.usos.uj.edu.pl/res/up/200x250/180007-m-85b71cf9b5779f1e900af3f776b5db129c71140857943df51897103c680347fa.jpg alt="" style="float:left;width:14%;padding-left:3%;padding-bottom:2%">
+        <div class="imageContainer">
+        <img src=https://promocja.uj.edu.pl/documents/10172/d6377832-efd3-42ef-a508-069aad98029f alt="" style="float:right;width:15%;padding-right:5%">
+        </div>
+    <div class="column">
+	<p><br>Jestem Maciej Hendzel, a to jest moja strona "O mnie".</p>
+        <p>Zawodowo zajmuję się działalnością naukową, a w wolnym czasie pasjonuje mnie muzyka.</p>
+        </div></div>
+    </section>
+    <section>
+        <h3 id="portfolio">Portfolio zawodowe</h3>
+        <div class="row">
+        <ul>
+            <li>Analityk Danych</li>
+            <li>Prowadzenie przedmiotów na Wydziale Fizyki, Astronomii i Informatyki Stosowanej <a href="https://fais.uj.edu.pl/" target="_blank">WFAIS</a></li>
+            <li>Działalność naukowa w zakresie fizyki i chemii <a href="https://www.researchgate.net/profile/Maciej-Hendzel" target="_blank">ResearchGate</a></li>
+        </ul>
+        </div>
+
+    </section>
+    <section>
+        <h3 id="zaint_zaw">Zainteresowania zawodowe</h3>
+        <ul>
+            <li>fizyka materii skondensowanej</li>
+            <li>nadprzewodnictwo</li>
+            <li>nanofizyka</li>
+            <li>chemia kwantowa</li>
+        </ul>
+    </section>
+    <section>
+        <h3 id="zaint">Inne zainteresowania</h3>
+        <ul>
+            <li>Fizyka</li>
+            <li>Muzyka: gitara i wiolonczela</li>
+            <li>Książki</li>
+        </ul>
+    </section>
+    <section>
+        <h3 id="przedmioty">Prowadzone przedmioty</h3>
+        <ul>
+            <li>fizyka</li>
+            <li>techniki www</li>
+            <li>język c</li>
+        </ul>
+    </section>
+    <section>
+        <h3 id="kontakt">Kontakt</h3>
+        <p>Możesz się ze mną skontaktować poprzez adres e-mail:maciej.hendzel@doctoral.uj.edu.pl.</p>
+        <p>Po umówieniu na drodze mailowej w pokoju D2-65.</p>
+    </section>
+    <footer>
+        <p>Strona stworzona w HTML</p>
+    </footer>
+</body>
+</html>
