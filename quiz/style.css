@@ -25,9 +25,11 @@ button{
 }
 
 .heading {
+    padding-top: 50px;
     font-size: 20px;
     text-align: center;
 }
+
 
 .container{
     position: absolute;
@@ -41,6 +43,15 @@ button{
     display: flex;
     flex-direction: column;
     height: 100%;
+}
+
+#nameForm{
+    width: auto;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #quiz-container {
@@ -62,7 +73,7 @@ input{
 }
 
 .question {
-    padding-top: 25px;
+    padding-top: 50px;
     padding-bottom: 25px;
     font-size: 24px;
 }
