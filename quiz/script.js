@@ -32,9 +32,15 @@ let currentQuestion = 0;
 let score = 0;
 let rightAnswer = false;
 
-function startQuiz(){
+function openPage(){
+    startQuiz();
+}
 
-    
+function startQuiz(){
+    document.getElementById('quiz-container').style.visibility = "visible";
+    document.getElementById('start-container').style.visibility = "hidden";
+    currentQuestion = -1;
+    nextQuestion()
 }
 
 function checkAnswer(option) {
@@ -56,8 +62,6 @@ function checkAnswer(option) {
     });
     option.classList.add('clicked');
 }
-
-
 function nextQuestion() {
     currentQuestion++;
     if (rightAnswer) {
@@ -88,3 +92,5 @@ function nextQuestion() {
         document.getElementById("nextButton").style.display = "none";
     }
 }
+
+openPage();

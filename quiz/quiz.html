@@ -10,17 +10,24 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="quiz-container">
-        <div class="heading"><h1>Cześć!</h1></div>
-        <div class="question" id="question">1.pytanie pierwsze?</div>
+    <div class="heading"><h1>Quiz o html i css</h1></div>
+    <div id="start-container" class="container">
+        <form id="nameForm">
+            <h2>Podaj imię</h2>
+            <input type="text" id="name" required>
+        </form>    
+        <button id="startButton" onclick="startQuiz()">start</button>
+    </div>
+    <div id="quiz-container" class="container">
+        <div class="question" id="question"></div>
         <div class="options" id="options">
-            <div class="option" onclick="checkAnswer(this)">nie</div>
-            <div class="option" onclick="checkAnswer(this)">nie</div>
-            <div class="option" onclick="checkAnswer(this)">nie</div>
-            <div class="option" onclick="checkAnswer(this)">tak</div>
+            <div class="option" onclick="checkAnswer(this)"></div>
+            <div class="option" onclick="checkAnswer(this)"></div>
+            <div class="option" onclick="checkAnswer(this)"></div>
+            <div class="option" onclick="checkAnswer(this)"></div>
         </div>
         <button id="nextButton" onclick="nextQuestion()">następne pytanie</button>
-        <div id="result" style="display: none;">Wynik: <span id="score">0</span> /3</span></div>
+        <div id="result" style="display: none;">Wynik: <span id="score">0</span> / 3</span></div>
     </div>  
 </body>
 </html>
