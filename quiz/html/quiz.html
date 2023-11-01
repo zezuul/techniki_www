@@ -15,12 +15,11 @@
     </div>
     <div class="quiz-container">
         <div class="heading"><h1>Quiz techniki www</h1></div>
-        <div class="question" id="question">Chcesz rozpocząć?</div>
-        <div class="options" id="options">
-            <div class="option" onclick="checkAnswer(this)">tak</div>
-            <div class="option" onclick="checkAnswer(this)">nie</div>
-        </div>
-        <button id="nextButton" onclick="nextQuestion()">następne pytanie</button>
+            <p><label for="username">Wpisz nazwę użytkownika pod jaką zapisać wynik:</label></p>
+            <textarea id="username" name="username" rows="1" cols="50">
+            </textarea>
+        <button id="showQuizButton" onclick="showQuiz()">Dalej</button>
+        <button id="nextButton" style="display: none;" onclick="nextQuestion()">następne pytanie</button>
         <div id="result" style="display: none;">Wynik: <span id="score">0</span> /10</span></div>
     </div>  
 </body>

@@ -74,6 +74,15 @@ body {
     background-color: var(--dark-buttons);
 }
 
+.showQuizButton {
+    padding: 25px;
+    margin-top: 25px;
+    font-size: 20px;
+    border-radius: 20px ;
+    background-color: #eee;
+    cursor: pointer;
+}
+
 #nextButton {
     padding: 25px;
     margin-top: 25px;

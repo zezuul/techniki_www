@@ -93,11 +93,6 @@ let currentQuestion = 0;
 let score = 0;
 let rightAnswer = false;
 
-function startQuiz() {
-
-
-}
-
 function checkAnswer(option) {
     rightAnswer = false;
 
@@ -152,4 +147,17 @@ function nextQuestion() {
 
 function showAdminLogin() {
     window.location.href = "admin.html";
+}
+
+function saveUser(){
+
+}
+
+function showQuiz() {
+
+    //TO DO: show questions
+    // save username and number of points
+    let user = "";
+    saveUser(user);
+    nextQuestion();
 }
