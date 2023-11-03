@@ -1,0 +1,1 @@
+TODO połączyć resztę funkcji z frontendu z serwerem
