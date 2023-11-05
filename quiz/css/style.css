@@ -43,10 +43,26 @@ body {
 }
 
 .admin-logon-container {
-    background-color:var(--background);
     position: absolute;
-    top: 8px;
-    right: 16px;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.admin-login-button {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #2b6a72;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+    padding: 15px 20px;
+    margin-left: 10px;
+}
+
+.admin-login-button:hover {
+    background-color: var(--light-buttons);
 }
 
 .heading {
