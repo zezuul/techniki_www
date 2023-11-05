@@ -113,6 +113,27 @@ function checkAnswer(option) {
     option.classList.add('clicked');
 }
 
+function saveUserResult() {
+    const userResult = {
+      username: user,
+      score: score,
+    };
+  
+    const userResultJSON = JSON.stringify(userResult);
+
+    const blob = new Blob([userResultJSON], { type: "application/json" });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "user_result.json";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
 
 function nextQuestion() {
     currentQuestion++;
@@ -133,10 +154,10 @@ function nextQuestion() {
         options.appendChild(optionDiv);
       });
     } else {
-      if (score == questions.length) {
+      if (score >= 5 ) {
         document.getElementById("result").classList.add("good");
       }
-      if (score == 0) {
+      if (score < 5 ) {
         document.getElementById("result").classList.add("bad");
       }
       
@@ -147,6 +168,8 @@ function nextQuestion() {
       document.getElementById("result").style.display = "block";
       document.getElementById("score").textContent = score;
       document.getElementById("nextButton").style.display = "none";
+
+      saveUserResult();
     }
   }
   
@@ -155,17 +178,14 @@ function showAdminLogin() {
     window.location.href = "admin.html";
 }
 
-function saveUser(){
-
-}
-
 function showQuiz() {
-    // Get the username from the text area
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("username").value.trim();
     
-    if (username.trim() === "") {
-      alert("Please enter a username before proceeding.");
-      return;
+    if (username === "") {
+        alert("Please enter a username before proceeding.");
+        return;
+    } else {
+        user = username;
     }
   
     document.querySelector("label[for='username']").style.display = "none";

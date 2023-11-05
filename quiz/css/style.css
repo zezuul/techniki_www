@@ -111,7 +111,7 @@ body {
     padding: 35px;
 }
 #result.good {
-    background-color: rgb(38, 109, 85);
+    background-color: rgb(11, 90, 64);
 }
 #result.bad {
     background-color: rgb(139, 61, 61);
