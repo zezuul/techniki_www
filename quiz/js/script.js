@@ -89,7 +89,7 @@ const questions = [
     },
 ];
 
-let currentQuestion = 0;
+let currentQuestion = -1;
 let score = 0;
 let rightAnswer = false;
 
@@ -117,33 +117,39 @@ function checkAnswer(option) {
 function nextQuestion() {
     currentQuestion++;
     if (rightAnswer) {
-        score++;
+      score++;
     }
     if (currentQuestion < questions.length) {
-        document.getElementById("question").textContent = (currentQuestion + 1) + ". " + questions[currentQuestion].question;
-        const options = document.getElementById("options");
-        options.innerHTML = "";
-        questions[currentQuestion].options.forEach(optionData => {
-            const optionDiv = document.createElement("div");
-            optionDiv.className = "option";
-            optionDiv.textContent = optionData.text;
-            optionDiv.onclick = function () {
-                checkAnswer(optionDiv);
-            };
-            options.appendChild(optionDiv);
-        });
+      document.getElementById("question").textContent = (currentQuestion + 1) + ". " + questions[currentQuestion].question;
+      const options = document.getElementById("options");
+      options.innerHTML = "";
+      questions[currentQuestion].options.forEach(optionData => {
+        const optionDiv = document.createElement("div");
+        optionDiv.className = "option";
+        optionDiv.textContent = optionData.text;
+        optionDiv.onclick = function () {
+          checkAnswer(optionDiv);
+        };
+        options.appendChild(optionDiv);
+      });
     } else {
-        if (score == questions.length) {
-            document.getElementById("result").classList.add("good");
-        }
-        if (score == 0) {
-            document.getElementById("result").classList.add("bad");
-        }
-        document.getElementById("result").style.display = "block";
-        document.getElementById("score").textContent = score;
-        document.getElementById("nextButton").style.display = "none";
+      if (score == questions.length) {
+        document.getElementById("result").classList.add("good");
+      }
+      if (score == 0) {
+        document.getElementById("result").classList.add("bad");
+      }
+      
+      // Hide the question container
+      document.getElementById("question-container").style.display = "none";
+      
+      // Show the result container
+      document.getElementById("result").style.display = "block";
+      document.getElementById("score").textContent = score;
+      document.getElementById("nextButton").style.display = "none";
     }
-}
+  }
+  
 
 function showAdminLogin() {
     window.location.href = "admin.html";
@@ -154,10 +160,18 @@ function saveUser(){
 }
 
 function showQuiz() {
-
-    //TO DO: show questions
-    // save username and number of points
-    let user = "";
-    saveUser(user);
+    // Get the username from the text area
+    const username = document.getElementById("username").value;
+    
+    if (username.trim() === "") {
+      alert("Please enter a username before proceeding.");
+      return;
+    }
+  
+    document.querySelector("label[for='username']").style.display = "none";
+    document.getElementById("username").style.display = "none";
+    document.getElementById("showQuizButton").style.display = "none";
+  
+    document.getElementById("nextButton").style.display = "block";
     nextQuestion();
-}
+  }

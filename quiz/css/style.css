@@ -29,6 +29,19 @@ body {
     height: 100vh;
 }
 
+.question-container {   
+    background-color:var(--background);
+    min-width: 600px;
+    width: 70%;
+    margin: auto;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
 .admin-logon-container {
     background-color:var(--background);
     position: absolute;
@@ -95,7 +108,7 @@ body {
 #result {
     border-radius: 20px ;
     font-weight: bold;
-    padding: 25px;
+    padding: 35px;
 }
 #result.good {
     background-color: rgb(38, 109, 85);

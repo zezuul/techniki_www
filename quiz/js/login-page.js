@@ -8,8 +8,8 @@ loginButton.addEventListener("click", (e) => {
     const password = loginForm.password.value;
 
     if (username === "admin" && password === "admin1") {
-        alert("You have successfully logged in.");
-        location.reload();
+        alert("Welcome to admin panel.");
+        // TODO wyswietl panel administratora
     } else {
         loginErrorMsg.style.opacity = 1;
     }

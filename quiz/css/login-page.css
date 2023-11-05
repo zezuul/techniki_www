@@ -9,12 +9,12 @@ html {
     display: grid;
     justify-items: center;
     align-items: center;
-    background-color: #3a3a3a;
+    background-color: #2b6a72;
   }
   
   #admin-login-container {
-    width: 50%;
-    height: 70%;
+    width: 30%;
+    height: 40%;
     display: grid;
     justify-items: center;
     align-items: center;
@@ -39,8 +39,8 @@ html {
     font-size: 12px;
     font-weight: bold;
     color: #8a0000;
-    border: 1px solid #8a0000;
-    background-color: #e58f8f;
+    border: 1px solid #630000;
+    background-color: #f3f0f0;
     opacity: 0;
   }
   
@@ -56,12 +56,12 @@ html {
   }
   
   .login-form-field::placeholder {
-    color: #3a3a3a;
+    color: #2b6a72;
   }
   
   .login-form-field {
     border: none;
-    border-bottom: 1px solid #3a3a3a;
+    border-bottom: 1px solid #2b6a72;
     margin-bottom: 10px;
     border-radius: 3px;
     outline: none;
@@ -75,7 +75,7 @@ html {
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    background-color: #3a3a3a;
+    background-color: #2b6a72;
     cursor: pointer;
     outline: none;
   }
