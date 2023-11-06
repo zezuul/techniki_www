@@ -1,0 +1,134 @@
+:root {
+    --background:#202020;
+    --light-buttons:#BFECFF;
+    --dark-buttons:#52BAE7;
+    --text:#D9D9D9;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #202020;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.quiz-container {   
+    background-color:var(--background);
+    min-width: 600px;
+    width: 70%;
+    margin: auto;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.question-container {   
+    background-color:var(--background);
+    min-width: 600px;
+    width: 70%;
+    margin: auto;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.admin-logon-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.admin-login-button {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #2b6a72;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+    padding: 15px 20px;
+    margin-left: 10px;
+}
+
+.admin-login-button:hover {
+    background-color: var(--light-buttons);
+}
+
+.heading {
+    font-size: 20px;
+    text-align: center;
+}
+.question {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 24px;
+}
+.options {  
+    min-width: 400px;
+    height: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.option {
+    background-color:var(--light-buttons);
+    color: var(--background);
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+    margin: 5px;
+    height: 35%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.option.clicked {
+    background-color: var(--dark-buttons);
+}
+
+.showQuizButton {
+    padding: 25px;
+    margin-top: 25px;
+    font-size: 20px;
+    border-radius: 20px ;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#nextButton {
+    padding: 25px;
+    margin-top: 25px;
+    font-size: 20px;
+    border-radius: 20px ;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+#result {
+    border-radius: 20px ;
+    font-weight: bold;
+    padding: 35px;
+}
+#result.good {
+    background-color: rgb(11, 90, 64);
+}
+#result.bad {
+    background-color: rgb(139, 61, 61);
+}    

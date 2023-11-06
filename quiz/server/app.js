@@ -3,7 +3,7 @@ const app = express();
 import cors from 'cors';
 const port = 5000;
 
-import { getQuestions, getQuestion, createQuestion, getAnswers, getAnswer } from './db.js';
+import { getQuestions, getQuestion, createQuestion, getAnswers, getAnswer, postScoreboard, getScoreboard } from './db.js';
 
 app.use(cors());
 app.use(express.json());
@@ -39,6 +39,17 @@ app.get("/answers/:id", async (req, res) => {
     const id = req.params.id;
     const answer = await getAnswer(id);
     res.send(answer);
+})
+
+app.post("/saveUserResult", async (req, res) => {
+    const { username, score } = req.body;
+    const question = await postScoreboard(username, score);
+    res.status(200).send('User result saved successfully.');
+});
+
+app.get("/scoreboard", async (req, res) => {
+    const scores = await getScoreboard();
+    res.send(scores);
 })
 
 app.listen(port, () => console.log('app is running'));

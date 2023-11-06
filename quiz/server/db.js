@@ -25,7 +25,7 @@ export async function getQuestion(id) {
 
 export async function createQuestion(title, contents) {
     const [result] = await pool.query(`
-    INSERT INTO notes (title, contents)
+    INSERT INTO questions (title, contents)
     VALUES (?, ?)
     `, [title, contents])
     return result
@@ -42,6 +42,19 @@ export async function getAnswer(id) {
     WHERE question_id = ?
     `, [id]) //send id to db separately without untrusted value
     return rows; //always returns first object out of array
+}
+
+export async function postScoreboard(username, score) {
+    const [result] = await pool.query(`
+        INSERT INTO scoreboard (username, score)
+        VALUES (?, ?)
+    `, [username, score]);
+    return result;
+}
+
+export async function getScoreboard(){
+    const [rows] = await pool.query("SELECT * FROM scoreboard")
+    return rows;
 }
 
 const notes = await getAnswer(1)
