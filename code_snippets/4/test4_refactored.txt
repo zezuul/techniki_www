@@ -1,0 +1,100 @@
+class OnlineStore {
+  constructor() {
+    this.products = [];
+    this.orders = [];
+  }
+
+  addProduct(id, name, price, stock) {
+    const product = { id, name, price, stock };
+    this.products.push(product);
+  }
+
+  placeOrder(productId, quantity, customer) {
+    const product = this.findProductById(productId);
+    this.checkProductAvailability(product, quantity);
+
+    const order = {
+      productId,
+      quantity,
+      customer,
+      status: 'Processing',
+      total: product.price * quantity,
+    };
+
+    this.updateStockAndOrders(product, quantity, order);
+    return order;
+  }
+
+  cancelOrder(orderId) {
+    const order = this.findOrderById(orderId);
+    this.validateOrderCancellation(order);
+
+    order.status = 'Cancelled';
+    const product = this.findProductById(order.productId);
+    product.stock += order.quantity;
+  }
+
+  shipOrder(orderId) {
+    const order = this.findOrderById(orderId);
+    this.validateOrderShipping(order);
+
+    order.status = 'Shipped';
+  }
+
+  restockProduct(productId, quantity) {
+    const product = this.findProductById(productId);
+    product.stock += quantity;
+  }
+
+  calculateTotalSales() {
+    return this.orders.reduce((acc, order) => (order.status === 'Shipped' ? acc + order.total : acc), 0);
+  }
+
+  listProducts() {
+    return this.products.map(p => `${p.name} - Price: ${p.price}, Stock: ${p.stock}`);
+  }
+
+  // dodane metody
+
+  findProductById(productId) {
+    const product = this.products.find(p => p.id === productId);
+    if (!product) {
+      throw new Error('Product ID does not exist.');
+    }
+    return product;
+  }
+
+  checkProductAvailability(product, quantity) {
+    if (!product || product.stock < quantity) {
+      throw new Error('Product is not available in the desired quantity.');
+    }
+  }
+
+  findOrderById(orderId) {
+    const order = this.orders.find(o => o.id === orderId);
+    if (!order) {
+      throw new Error('Order ID does not exist.');
+    }
+    return order;
+  }
+
+  validateOrderCancellation(order) {
+    if (order.status !== 'Processing') {
+      throw new Error('Order cannot be cancelled once it is beyond the processing stage.');
+    }
+  }
+
+  validateOrderShipping(order) {
+    if (!order) {
+      throw new Error('Order ID does not exist.');
+    }
+    if (order.status !== 'Processing') {
+        throw new Error('The order is either already shipped or cancelled.');
+      }
+  }
+
+  updateStockAndOrders(product, quantity, order) {
+    product.stock -= quantity;
+    this.orders.push(order);
+  }
+}
