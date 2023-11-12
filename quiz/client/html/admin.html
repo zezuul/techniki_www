@@ -23,8 +23,23 @@
   </main>
   <div id="admin-panel-container" style="display: none;">
     <h1>Welcome to the Admin Panel!</h1>
-    <h1>SCOREBOARD</h1>
-    <div id="scoreboard" class="scoreboard-container"></div>
+    <div class="panels-container">
+      <div class="left-panel">
+        <h2>SCOREBOARD</h2>
+        <div id="scoreboard" class="scoreboard-container"></div>
+      </div>
+      <div class="right-panel">
+        <h2>Add Question</h2>
+        <form id="add-question-with-answers-form">
+          <input type="text" id="question-text" placeholder="Question">
+          <input type="text" id="answer1" class="answer" placeholder="Answer 1" data-is-correct="true">
+          <input type="text" id="answer2" class="answer" placeholder="Answer 2" data-is-correct="false">
+          <input type="text" id="answer3" class="answer" placeholder="Answer 3" data-is-correct="false">
+          <input type="text" id="answer4" class="answer" placeholder="Answer 4" data-is-correct="false">
+          <button type="submit" id="add-question-button">Add</button>
+        </form>
+      </div>
+    </div>  
   </div>
 </body>
 

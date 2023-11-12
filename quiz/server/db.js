@@ -20,15 +20,13 @@ export async function getQuestion(id) {
     FROM questions
     WHERE question_id = ?
     `, [id]) //send id to db separately without untrusted value
-    return rows[0]; //always returns first object out of array
+    return rows[0];
 }
 
-export async function createQuestion(title, contents) {
-    const [result] = await pool.query(`
-    INSERT INTO questions (title, contents)
-    VALUES (?, ?)
-    `, [title, contents])
-    return result
+export async function getLastQuestionId() {
+  const [rows] = await pool.query("SELECT MAX(question_id) as maxQuestionId FROM questions");
+  const lastQuestionId = rows[0].maxQuestionId;
+  return lastQuestionId;
 }
 
 export async function getAnswers(){
@@ -41,7 +39,7 @@ export async function getAnswer(id) {
     FROM answers
     WHERE question_id = ?
     `, [id]) //send id to db separately without untrusted value
-    return rows; //always returns first object out of array
+    return rows;
 }
 
 export async function postScoreboard(username, score) {
@@ -57,5 +55,27 @@ export async function getScoreboard(){
     return rows;
 }
 
-const notes = await getAnswer(1)
-console.log(notes);
+export async function addQuestionWithAnswers(question_text, answers) {
+  try {
+    const questionResult = await pool.query(
+      `INSERT INTO questions (question_text) VALUES (?)`,
+      [question_text]
+    );
+
+    const question_id = questionResult[0].insertId;
+
+    const answerValues = answers.map(([ answer_text, is_correct ]) => [question_id, answer_text, is_correct]); // ([]) - directly destructure from array
+
+    const answerResult = await pool.query(
+      `INSERT INTO answers (question_id, answer_text, is_correct) VALUES ?`,
+      [answerValues]
+    );
+
+    return { question_id, question_text, answers: answerResult.affectedRows };
+  } catch (error) {
+    throw error;
+  }
+}
+
+// const notes = await getLastQuestionId();
+// console.log(notes);

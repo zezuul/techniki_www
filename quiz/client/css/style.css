@@ -103,7 +103,7 @@ body {
     background-color: var(--dark-buttons);
 }
 
-.showQuizButton {
+#showQuizButton {
     padding: 25px;
     margin-top: 25px;
     font-size: 20px;

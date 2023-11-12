@@ -3,7 +3,7 @@ const app = express();
 import cors from 'cors';
 const port = 5000;
 
-import { getQuestions, getQuestion, createQuestion, getAnswers, getAnswer, postScoreboard, getScoreboard } from './db.js';
+import { getQuestions, getQuestion, getLastQuestionId, getAnswers, getAnswer, postScoreboard, getScoreboard, addQuestionWithAnswers } from './db.js';
 
 app.use(cors());
 app.use(express.json());
@@ -24,10 +24,23 @@ app.get("/questions/:id", async (req, res) => {
     res.send(question);
 })
 
+app.get("/lastQuestionId", async (req, res) => {
+    try {
+        const lastQuestionId = await getLastQuestionId();
+        res.send(lastQuestionId.toString());
+    } catch (error) {
+        res.status(500).send('Error getting last question ID');
+    }
+});
+
 app.post("/questions", async (req, res) => {
-    const {title, contents} = req.body;
-    const question = await createQuestion(title, contents);
-    res.status(201).send(question); //send back info that question was created
+    const { question_text, answers } = req.body; //answers = [{ answer_text: '', is_correct: 1 }]
+    try {
+        const newQuestion = await addQuestionWithAnswers(question_text, answers);
+        res.status(201).send(newQuestion);
+    }catch (error) {
+        res.status(500).send('Error creating question with answers');
+    }
 })
 
 app.get("/answers", async (req, res) => {

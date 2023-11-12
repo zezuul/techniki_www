@@ -80,9 +80,61 @@ body {
   outline: none;
 }
 
+#admin-panel-container {
+  text-align: center;
+}
+
+.panels-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 35%; 
+}
+
+.left-panel,
+.right-panel {
+  width: 48%;
+  height: 100%; 
+  background-color: rgb(1, 123, 160); /*rgb(1, 123, 160) */
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .scoreboard-container {
+  text-align: left;
   border: 1px solid #000000; 
-  padding: 20px; 
-  margin-top: 20px; 
-  background-color: rgb(1, 123, 160);
+  padding: 18px; 
+  padding-left: 60px;
+  margin-top: 15px; 
+  background-color: rgb(10, 61, 102);
+  color: white;
+  border-radius: 2px;
+}
+
+#question-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 81%;
+}
+
+.answer {
+  margin-bottom: 10px;
+  width: 40%;
+}
+
+.answer.clicked {
+  background-color:#43cc4e;
+}
+
+#add-question-button {
+  padding: 10px 60px;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 20px ;
+  background-color: #2b6a72;
+  color: white;
+  cursor: pointer;
 }
