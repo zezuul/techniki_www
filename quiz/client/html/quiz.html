@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@1&family=Londrina+Outline&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="admin-logon-container">
+    <button class="admin-login-button" onclick="showAdminLogin()">Admin</button>
+    </div>
+    <div class="quiz-container">
+        <div class="heading"><h1>Quiz techniki www</h1></div>
+            <p><label for="username">Wpisz nazwę użytkownika pod jaką zapisać wynik:</label></p>
+            <textarea id="username" name="username" rows="1" cols="50">
+            </textarea>
+        <button id="showQuizButton" onclick="showQuiz()">Dalej</button>
+        <div id="question-container"> 
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        </div>
+        <button id="nextButton" style="display: none;" onclick="nextQuestion()">następne pytanie</button>
+        <div id="result" style="display: none;">Wynik: <span id="score">0</span> /10</span></div>
+    </div>  
+</body>
+</html>

@@ -28,6 +28,43 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
+.question-container {   
+    background-color:var(--background);
+    min-width: 600px;
+    width: 70%;
+    margin: auto;
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.admin-logon-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.admin-login-button {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #2b6a72;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+    padding: 15px 20px;
+    margin-left: 10px;
+}
+
+.admin-login-button:hover {
+    background-color: var(--light-buttons);
+}
+
 .heading {
     font-size: 20px;
     text-align: center;
@@ -66,6 +103,15 @@ body {
     background-color: var(--dark-buttons);
 }
 
+#showQuizButton {
+    padding: 25px;
+    margin-top: 25px;
+    font-size: 20px;
+    border-radius: 20px ;
+    background-color: #eee;
+    cursor: pointer;
+}
+
 #nextButton {
     padding: 25px;
     margin-top: 25px;
@@ -78,10 +124,10 @@ body {
 #result {
     border-radius: 20px ;
     font-weight: bold;
-    padding: 25px;
+    padding: 35px;
 }
 #result.good {
-    background-color: rgb(38, 109, 85);
+    background-color: rgb(11, 90, 64);
 }
 #result.bad {
     background-color: rgb(139, 61, 61);
