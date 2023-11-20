@@ -162,6 +162,9 @@
     <a href="#tutorials">Tutorials</a>
     <a href="#articles">Articles</a>
     <a href="#contact">Contact</a>
+    <a href="#high-contrast"><b>High contrast version</b></a>
+
+</label>
 </div>
 <div class="section home first-section" id="home">
     <div class="content">
@@ -215,6 +218,13 @@
     <div class="content">
         <h2>Contact</h2>
         <p>Get in touch for collaborations, discussions, or any inquiries. Let's connect and explore the possibilities.</p>
+	<div class="container">
+	<form onsubmit="target_popup(this)">
+		<p><label for="fname"><b>Please enter your email here:</b></label></p>
+        	<p><input type="email" id="email" name="email" required></p>
+		<p><input type="submit" value="Submit"></p>
+	</form>
+	</div>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/maciej-hendzel-843a568b/" target="_blank" title="LinkedIn">
                 <i class="fab fa-linkedin"></i>
@@ -231,5 +241,10 @@
         </div>
     </div>
 </div>
+<script>
+function target_popup(form) {
+    alert("THANK YOU!\nEmail has been submitted correctly");
+}
+</script>
 </body>
 </html>
