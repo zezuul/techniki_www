@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientist & Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        .navigation {
+            display: flex;
+            justify-content: center;
+            background-color: #132F4C;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navigation a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        .navigation a:hover {
+            background-color: #1B3A5B;
+            border-radius: 5px;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 33.33%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .home::before {
+            background-image: url('fig0.png');
+        }
+        .research::before {
+            background-image: url('fig1.png');
+        }
+        .projects::before {
+            background-image: url('fig2.png');
+        }
+        .teaching::before {
+            background-image: url('fig3.png');
+        }
+        .tutorials::before {
+            background-image: url('fig4.png');
+        }
+        .articles::before {
+            background-image: url('fig6.png');
+        }
+        .contact::before {
+            background-image: url('fig5.png');
+        }
+        .content {
+            width: 66.67%;
+            padding-left: 33.33%;
+            padding-top: 0;
+            text-align: justify;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the start */
+        }
+        .home, .research, .projects, .teaching, .tutorials, .articles, .contact {
+            color: white;
+            background-color: #1B3A5B;
+        }
+        h1, h2 {
+            margin: 0;
+            margin-top: 0;
+            padding: 20px 0;
+            color: white;
+            text-align: left;
+            font-size: 4em; /* Making the title three times larger */
+            margin-left: 20px;
+        }
+        .research .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 40px;
+        }
+        .articles-list {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px;
+        }
+        .articles-list li {
+            margin-bottom: 10px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: start;
+            margin-left: 20px;
+        }
+        .social-icons a {
+            color: white;
+            margin: 5px;
+            font-size: 24px;
+        }
+        .social-icons a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="navigation">
+    <a href="#home">Home</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#tutorials">Tutorials</a>
+    <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
+</div>
+<div class="section home" id="home">
+    <div class="content">
+        <h1>Welcome to my personal page</h1>
+        <p>This is the home page of my scientific and development portfolio. Explore my work and insights in science and technology.</p>
+    </div>
+</div>
+<div class="section research" id="research">
+    <div class="content">
+        <h2>Research</h2>
+        <p>Discover my latest research in physics, chemistry, and data science. Dive into my publications and ongoing projects.</p>
+    </div>
+</div>
+<div class="section projects" id="projects">
+    <div class="content">
+        <h2>Projects</h2>
+        <p>Here you can find my portfolio of projects, including software development, research, and more.</p>
+    </div>
+</div>
+<div class="section teaching" id="teaching">
+    <div class="content">
+        <h2>Teaching</h2>
+        <p>Explore my teaching portfolio, including courses, workshops, and educational resources I've developed.</p>
+    </div>
+</div>
+<div class="section tutorials" id="tutorials">
+    <div class="content">
+        <h2>Tutorials</h2>
+        <p>Access a range of tutorials covering various aspects of programming, machine learning, and scientific computing.</p>
+    </div>
+</div>
+<div class="section articles" id="articles">
+    <div class="content">
+        <h2>Articles</h2>
+        <ul class="articles-list">
+            <li>Article 1</li>
+            <li>Article 2</li>
+            <li>Article 3</li>
+            <li>Article 4</li>
+        </ul>
+    </div>
+</div>
+<div class="section contact" id="contact">
+    <div class="content">
+        <h2>Contact</h2>
+        <p>Get in touch for collaborations, discussions, or any inquiries. Let's connect and explore the possibilities.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/maciej-hendzel-843a568b/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MacieOk" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:maciej.hendzel@doctoral.uj.edu.pl" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
