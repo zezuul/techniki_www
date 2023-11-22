@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scientist & Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         body, html {
             font-family: Arial, sans-serif;
@@ -162,7 +163,7 @@
     <a href="#tutorials">Tutorials</a>
     <a href="#articles">Articles</a>
     <a href="#contact">Contact</a>
-    <a href="#high-contrast"><b>High contrast version</b></a>
+    <a href="#high-contrast" id="high-contrast-link"><b>High contrast version</b></a>
 
 </label>
 </div>
@@ -174,21 +175,21 @@
 </div>
 <div class="section research" id="research">
     <div class="content">
-        <h2>Research</h2>
-        <p>Discover my latest research in physics, chemistry, and data science. Dive into my publications and ongoing projects.</p>
+        <h2 data-aos="fade-up">Research</h2>
+        <p data-aos="fade-left">Discover my latest research in physics, chemistry, and data science. Dive into my publications and ongoing projects.</p>
     </div>
 </div>
 <div class="section projects" id="projects">
     <div class="content">
-        <h2>Projects</h2>
-        <p>Here you can find my portfolio of projects, including software development, research, and more.</p>
+        <h2 data-aos="fade-up">Projects</h2>
+        <p data-aos="fade-left">Here you can find my portfolio of projects, including software development, research, and more.</p>
     </div>
 </div>
 <div class="section teaching" id="teaching">
     <div class="content">
-        <h2>Teaching</h2>
-        <p> Explore my teaching portfolio, including courses, workshops, and educational resources I've developed. </p>
-        <ul class="articles-list">
+        <h2 data-aos="fade-up">Teaching</h2>
+        <p data-aos="fade-left"> Explore my teaching portfolio, including courses, workshops, and educational resources I've developed. </p>
+        <ul data-aos="fade-left" class="articles-list">
             <li> 1. Physics laboratory for physics students (2021, 2022) </li>
             <li> 2. Physics laboratory for chemistry students </li>
             <li> 3. Physics laboratory for biotechnology students</li>
@@ -199,14 +200,14 @@
 </div>
 <div class="section tutorials" id="tutorials">
     <div class="content">
-        <h2>Tutorials</h2>
-        <p>Access a range of tutorials covering various aspects of programming, machine learning, and scientific computing.</p>
+        <h2 data-aos="fade-up">Tutorials</h2>
+        <p data-aos="fade-left">Access a range of tutorials covering various aspects of programming, machine learning, and scientific computing.</p>
     </div>
 </div>
 <div class="section articles" id="articles">
     <div class="content">
-        <h2>Articles</h2>
-        <ul class="articles-list">
+        <h2 data-aos="fade-up">Articles</h2>
+        <ul data-aos="fade-left" class="articles-list">
             <li><a href="https://iopscience.iop.org/article/10.1088/1361-6455/ac8298/meta" class="white-link">1. M. Hendzel, M. Fidrysiak, J. Spałek, Many-particle covalency...</a></li>
             <li><a href="https://pubs.acs.org/doi/full/10.1021/acs.jpclett.2c02544" class="white-link">2. M. Hendzel, M. Fidrysiak, J. Spałek, Toward Complementary Characterization...</a></li>
             <li><a href="http://przyrbwn.icm.edu.pl/APP/PDF/143/app143z2p12.pdf" class="white-link">3. M. Hendzel, J. Spałek, Degree of atomicity in chemical bonding...</a></li>
@@ -216,7 +217,7 @@
 </div>
 <div class="section contact last-section" id="contact">
     <div class="content">
-        <h2>Contact</h2>
+        <h2 data-aos="fade-up">Contact</h2>
         <p>Get in touch for collaborations, discussions, or any inquiries. Let's connect and explore the possibilities.</p>
 	<div class="container">
 	<form onsubmit="target_popup(this)">
@@ -241,10 +242,53 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+AOS.init({
+    duration: 1200,
+    once: true,
+});
+
 function target_popup(form) {
     alert("THANK YOU!\nEmail has been submitted correctly");
 }
+
+let clicked = false;
+document.addEventListener('DOMContentLoaded', function() {
+    var highContrast = document.getElementById('high-contrast-link');
+
+    highContrast.addEventListener('click', function() {
+        if(clicked === false){
+            clicked = true;
+            var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
+            sections.forEach(function(section) {
+                section.style.backgroundColor = 'black';
+            });
+            var navigationBar = document.querySelector('.navigation');
+            navigationBar.style.backgroundColor = 'white';
+            navigationBar.style.color = 'black';
+
+            var navLinks = navigationBar.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+            link.style.color = 'black';
+        });
+        }else{
+            clicked = false;
+            var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
+            sections.forEach(function(section) {
+                section.style.backgroundColor = '#1B3A5B';
+            });
+            var navigationBar = document.querySelector('.navigation');
+            navigationBar.style.backgroundColor = '#132F4C';
+            navigationBar.style.color = 'white';
+            
+            var navLinks = navigationBar.querySelectorAll('a');
+            navLinks.forEach(function(link) {
+            link.style.color = 'white';
+        });
+        }
+    });
+});
 </script>
 </body>
 </html>
