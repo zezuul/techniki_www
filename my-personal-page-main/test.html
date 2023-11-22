@@ -271,7 +271,9 @@ document.addEventListener('DOMContentLoaded', function() {
             var navLinks = navigationBar.querySelectorAll('a');
             navLinks.forEach(function(link) {
             link.style.color = 'black';
-        });
+            });
+
+            highContrast.textContent = 'Normal contrast version';
         }else{
             clicked = false;
             var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
@@ -285,7 +287,9 @@ document.addEventListener('DOMContentLoaded', function() {
             var navLinks = navigationBar.querySelectorAll('a');
             navLinks.forEach(function(link) {
             link.style.color = 'white';
-        });
+            });
+
+            highContrast.textContent = 'High contrast version';
         }
     });
 });
