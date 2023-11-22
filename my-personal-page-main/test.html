@@ -163,7 +163,7 @@
     <a href="#tutorials">Tutorials</a>
     <a href="#articles">Articles</a>
     <a href="#contact">Contact</a>
-    <a href="#high-contrast" id="high-contrast-link"><b>High contrast version</b></a>
+    <a href="#high-contrast" id="high-contrast-link"><b><span id="contrast-text">High contrast version</span></b></a>
 
 </label>
 </div>
@@ -256,40 +256,40 @@ function target_popup(form) {
 let clicked = false;
 document.addEventListener('DOMContentLoaded', function() {
     var highContrast = document.getElementById('high-contrast-link');
+    var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
+    var navigationBar = document.querySelector('.navigation');
+    var navLinks = navigationBar.querySelectorAll('a');
+    var contrastText = document.getElementById('contrast-text');
 
     highContrast.addEventListener('click', function() {
         if(clicked === false){
             clicked = true;
-            var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
             sections.forEach(function(section) {
                 section.style.backgroundColor = 'black';
             });
-            var navigationBar = document.querySelector('.navigation');
+            
             navigationBar.style.backgroundColor = 'white';
             navigationBar.style.color = 'black';
 
-            var navLinks = navigationBar.querySelectorAll('a');
             navLinks.forEach(function(link) {
             link.style.color = 'black';
             });
 
-            highContrast.textContent = 'Normal contrast version';
+           contrastText.textContent = 'Normal contrast version';
         }else{
             clicked = false;
-            var sections = document.querySelectorAll('.home, .research, .projects, .teaching, .tutorials, .articles, .contact');
             sections.forEach(function(section) {
                 section.style.backgroundColor = '#1B3A5B';
             });
-            var navigationBar = document.querySelector('.navigation');
+
             navigationBar.style.backgroundColor = '#132F4C';
             navigationBar.style.color = 'white';
             
-            var navLinks = navigationBar.querySelectorAll('a');
             navLinks.forEach(function(link) {
             link.style.color = 'white';
             });
 
-            highContrast.textContent = 'High contrast version';
+            contrastText.textContent = 'High contrast version';
         }
     });
 });
